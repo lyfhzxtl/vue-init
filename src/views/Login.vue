@@ -1,42 +1,41 @@
 <template>
-  <a-card
-    hoverable
-    style="width: 35%; margin: 150px auto; padding: 20px 20px 0 0; border-radius: 10px"
-  >
-    <a-form :form="form">
-      <a-form-item>
-        <a-input
-          v-decorator="[
+  <div class="login">
+    <a-card hoverable style="width: 100%; border-radius: 10px">
+      <a-form :form="form">
+        <a-form-item>
+          <a-input
+            v-decorator="[
           'username',
           { rules: [{ required: true, message: '请输入用户名' }] }
         ]"
-          placeholder="Username"
-        >
-          <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)"/>
-        </a-input>
-      </a-form-item>
-      <a-form-item>
-        <a-input
-          v-decorator="[
+            placeholder="Username"
+          >
+            <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)"/>
+          </a-input>
+        </a-form-item>
+        <a-form-item>
+          <a-input
+            v-decorator="[
           'password',
           { rules: [{ required: true, message: '请输入密码' }] }
         ]"
-          type="password"
-          placeholder="Password"
-        >
-          <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)"/>
-        </a-input>
-      </a-form-item>
-      <a-form-item :help="resContent" class="login-form-item">
-        <a-button
-          type="primary"
-          html-type="submit"
-          class="login-form-button"
-          @click="submitLogin"
-        >登录</a-button>
-      </a-form-item>
-    </a-form>
-  </a-card>
+            type="password"
+            placeholder="Password"
+          >
+            <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)"/>
+          </a-input>
+        </a-form-item>
+        <a-form-item :help="resContent" class="login-form-item">
+          <a-button
+            type="primary"
+            html-type="submit"
+            class="login-form-button"
+            @click="submitLogin"
+          >登录</a-button>
+        </a-form-item>
+      </a-form>
+    </a-card>
+  </div>
 </template>
 
 <script>
@@ -69,6 +68,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media screen and (min-width: 768px) {
+  .login {
+    width: 35%;
+    margin: 150px auto;
+    padding: 20px 20px 0 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .login {
+    width: 90%;
+    margin: 100px auto;
+  }
+}
 .login-form-item {
   text-align: center;
 }

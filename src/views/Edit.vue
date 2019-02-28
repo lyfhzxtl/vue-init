@@ -1,8 +1,8 @@
 <template>
   <div class="edit">
     <a-input-group compact>
-      <a-input style="width: 85%" placeholder="文章标题"/>
-      <a-input style="width: 5%" placeholder="序号"/>
+      <a-input style="width: 80%" placeholder="文章标题"/>
+      <a-input style="width: 10%" placeholder="序号"/>
       <a-button type="primary" icon="copy">保存</a-button>
     </a-input-group>
     <div class="btns">
